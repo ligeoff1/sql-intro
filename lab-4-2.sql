@@ -25,13 +25,15 @@
 -- | Ian        | Happ      |
 
 SELECT 
-plyrs.first_name
-,plyrs.last_name
+players.first_name
+,players.last_name
 
-FROM teams tms
-JOIN players plyrs
-ON tms.id = plyrs.id
+FROM players 
+INNER JOIN stats 
+ON players.id = stats.player_id
+INNER JOIN teams
+ON stats.team_id = teams.id
 
-WHERE name = "Chicago Cubs"
-AND year = 2020
+WHERE teams.name = "Chicago Cubs"
+AND teams.year = 2020
 ;
