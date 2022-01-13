@@ -24,4 +24,14 @@
 -- | Billy      | Hamilton  |
 -- | Ian        | Happ      |
 
+SELECT 
+plyrs.first_name
+,plyrs.last_name
 
+FROM teams tms
+JOIN players plyrs
+ON tms.id = plyrs.id
+
+WHERE name = "Chicago Cubs"
+AND year = 2020
+;
